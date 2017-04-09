@@ -1,0 +1,19 @@
+language: c
+
+sudo: false
+
+script:
+  - make all
+
+deploy:
+  provider: releases
+  api_key:
+    secure: rtNDmrTuIsmCRD6mdcWGS4aseWyeOdWe5yFmDEpVzYm+c96OClsoXl72IZh11r1ywxa1EGCVmxN2ylhEfx6WmXKGmdj49oUmf+9utzzL6a+kQp1iktAPn+ma4n8e66MFP4lAkIkbY+3GakPnyvwVgVOmXof/Jxn0ldaqRF5BhpWyE2BTcQdMyfVTN5pQp+sQkkmty2cAbMGfi4BlRSFWx+ibN/6QXhscOTQWs1UPMmp4sdNrZQ18uOoaCILsSRGqqP7/bFC6R1GUjtUoXtXnRNm0eHXn9Ock0Wptym09a1Hy+blrT1d/pPRO1W1wn3XU4q4bEKCbV21f72a6f3i40TupvJUDhBLEUxXiOa6sL7WJGkldgH1fLbbdvTRdpDq8wQnA7/Fuc2za15MBTgk0cUlJdjE+n3BFI0UY1+8/JV1mPMzqRQZKRmdBfb+PxVCq7J5IVu23u3dQ4pMfBOt8Y+wmpNBy8JeFP1TQiHzIZJgK+IBSXHiA1CuqA4zlO2EuhmclJ9E296M/2nlpdSWA8dR5wc5Xt6TiF9yH6d6JmJ75VrFFPfE0P2x/vFhSA6zpEy/CcLdN1TFqBBzlxWnYVk6KpXdEjSigWph9NZlhQW8lGRLUgBOgpSfNqYKEEthMSUaWEAVVLSdxr3zebUL9HZG5Eloug/3ehLd9hvasqKk=
+  file_glob: true
+  file:
+    - smm-fan-dist.tar.bz2
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: sandor-balazs/smm-fan
+
